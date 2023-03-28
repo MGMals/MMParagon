@@ -252,18 +252,14 @@
 									<strong>Error!</strong> There was an error sending your message.
 									<span class="mail-error-message text-1 d-block"></span>
 								</div>
+					
 								<div class="row">
-									<div class="form-group col">
-										<input type="text" placeholder="Name" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" required>
+									<div class="form-group col-lg-6">
+										<input type="text" placeholder="First Name*" value="" data-msg-required="Please enter your first name." maxlength="100" class="form-control" name="firstname" required>
 									</div>
 									
-								</div>
-								<div class="row">
 									<div class="form-group col-lg-6">
-										<input type="text" placeholder="First Name" value="" data-msg-required="Please enter your first name." maxlength="100" class="form-control" name="firstname" >
-									</div>
-									<div class="form-group col-lg-6">
-										<input type="text" placeholder="Last Name" value="" data-msg-required="Please enter your last name."  maxlength="100" class="form-control" name="lastname">
+										<input type="text" placeholder="Last Name*" value="" data-msg-required="Please enter your last name."  maxlength="100" class="form-control" name="lastname" required>
 									</div>
 								</div>
 								<div class="row">
@@ -273,27 +269,34 @@
 								</div>
 								<div class="row">
 									<div class="form-group col">
-										<input placeholder="Subject" type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" required>
+										<input placeholder="Subject*" type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" required>
 									</div>
 								</div>
 								<div class="row">
 									<div class="form-group col-lg-6">
-										<input type="text" placeholder="Phone (123)-345-3453" value="" data-msg-required="Please enter your phone number." maxlength="100" class="form-control" name="phone" >
+										<input type="text"  placeholder="(555) 555-5555*" value="" data-msg-required="Please enter your phone number." maxlength="100" class="form-control" name="phone" required >
 									</div>
 									<div class="form-group col-lg-6">
-										<input type="email" placeholder="Your E-mail" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" required>
+										<input type="email" placeholder="Email*" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" required>
 									</div>
 								</div>
 								
 								<div class="row">
 									<div class="form-group col">
-										<textarea placeholder="Your Message..." maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" required></textarea>
+										<textarea placeholder="Message*" maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" required></textarea>
 									</div>
 								</div>
 
 								<!-- add recapth here -->
+								<!-- <div class="row">
+									<div class="form-group col">
+										<button type="submit" Text value="Send Message" onclick="GoSend(); AutoSubject();" class="btn btn-primary custom-btn text-center text-uppercase text-decoration-none border-0 py-0 px-5 font-weight-semibold" data-loading-text="Loading...">
+Submit</button>
+									</div>
+								</div> -->
 								<div class="row">
 									<div class="form-group col">
+
 										<input type="submit" value="Send Message" class="btn btn-primary custom-btn text-center text-uppercase text-decoration-none border-0 py-0 px-5 font-weight-semibold" data-loading-text="Loading...">
 									</div>
 								</div>
@@ -401,6 +404,59 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="../js/theme.init.js"></script>
+		
+		
+		<!-- <script>
+		
+		var msgid = 1;
+		AutoSubject();
+		
+		function AutoSubject() {
+				document.mailform.subject.disabled=false;
+				document.mailform.subject.value=document.mailform.subject.value;
+		}
 
-	</body>
+		function GoSend() {
+			
+		
+			 if (document.mailform.fromname.value=="" || document.mailform.from.value=="" || document.mailform.subject.value==""||document.mailform.message.value=="") {
+				return false;
+			}
+		
+			var postdata= "sendemail=1&toemail="+"tkhines@paragon-one.com";
+				postdata+="&from="+document.mailform.from.value;
+				postdata+="&name="+document.mailform.fromname.value;
+				postdata+="&subject="+document.mailform.subject.value;
+				postdata+="&sendmethod="+"smtp";
+				postdata+="&message="+encodeURIComponent(document.mailform.message.value).replace("%20", "+");
+			
+			var url="/php/mail_test.php";
+			var request=new XMLHttpRequest();
+			request.open("POST",url,true);
+			request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			request.overrideMimeType("text/plain");
+			request.onreadystatechange=function() {
+				
+			  var successAlert =  document.getElementById("successDiv");
+
+			  var errorAlert =  document.getElementById("errorDiv");
+
+
+				if ( request.readyState==4 ) {
+					if (request.responseText == "OK" || request.responseText == "FAIL" ) 
+					{
+					  window.location.href ="/thankyou.html";
+					} 
+					else 
+					{
+						 //success
+						   window.location.href ="/thankyou.html";
+					}
+				}
+			}
+			request.send(postdata);
+		}
+
+</script> -->
+</body>
 </html>
