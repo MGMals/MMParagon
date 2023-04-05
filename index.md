@@ -4,6 +4,6 @@
 
 Please review the sample websites below. 
 
-2. Design Layout 2 - [Sample2](https://mgmals.github.io/MMParagon/layout2/demo-business-consulting-2.html).
+2. Design Layout 2 - [Sample2](https://mgmals.github.io/MMParagon/layout2/index.html).
 
 
