@@ -24,7 +24,11 @@ require 'php-mailer/src/Exception.php';
 if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
 
 	// Your Google reCAPTCHA generated Secret Key here
-	$secret = 'YOUR_RECAPTCHA_SECRET_KEY';
+	//test key
+	//$secret = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
+
+	// real key
+	$secret = '6LeYrWclAAAAAET3ivJHq8ux92fD6TAb66NUi4Bp';
 	
 	if( ini_get('allow_url_fopen') ) {
 		//reCAPTCHA - Using file_get_contents()
@@ -53,13 +57,26 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 	if($responseData->success) {
 
 		// Step 1 - Enter your email address below.
-		$email = 'you@domain.com';
+		$email = 'Info@paragon-one.com';
 
 		// If the e-mail is not working, change the debug option to 2 | $debug = 2;
 		$debug = 0;
 
-		// If contact form don't have the subject input, change the value of subject here
-		$subject = ( isset($_POST['subject']) ) ? $_POST['subject'] : 'Define subject in php/contact-form-recaptcha.php line 62';
+		// If contact form don't have the subject input, change the value of subject here 		
+		//$subject = (isset($_POST['subject']) ) ? $_POST['subject'] : 'Define subject in php/contact-form-recaptcha.php line 62';
+
+		//email
+		$company =  (isset($_POST['company']) ) ? $_POST['company'] : 'No Company Entered';
+
+        //subject
+		$subject = (isset($_POST['subject']) ) ? $_POST['subject'] : 'No Subject Entered';
+
+		//phone
+		$phone =  (isset($_POST['phone']) ) ? $_POST['phone'] : 'No Phone Entered';
+
+		//email
+		$emailusr =  (isset($_POST['email']) ) ? $_POST['email'] : 'No Email Entered';
+
 
 		$message = '';
 
