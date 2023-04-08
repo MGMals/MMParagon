@@ -771,7 +771,7 @@ html[dir="rtl"] .slider-container .line-pre-title {
 }
 
 /*
-* Contact Form Muona Malola Changes For Inside Text Box Color
+* Contact Form
 */
 .custom-form-style-1 .form-control {
 		border: 0;
@@ -779,7 +779,7 @@ html[dir="rtl"] .slider-container .line-pre-title {
 		padding: 1.2rem;
 		box-shadow: none !important;
 		height: auto;
-		background: #EEF0F4 !important;
+		background: #fafafc !important;
 }
 
 /*
