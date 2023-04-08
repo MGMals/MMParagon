@@ -4,6 +4,6 @@
 
 Please review the sample websites below. 
 
-Design Layout  - [Sample2](https://mgmals.github.io/MMParagon/layout2/index.html).
+Design Layout  - [Sample2](https://mgmals.github.io/MMParagon/home.html).
 
 
